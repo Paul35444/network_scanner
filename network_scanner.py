@@ -4,7 +4,7 @@ import scapy.all as scapy
 
 #func to scan ip
 def scan(ip):
-    scapy.arping(ip)
-
+    arp_request = scapy.ARP()
+    print(arp_request.summary())
 #scan modem ip
 scan("192.168.1.1/24")
