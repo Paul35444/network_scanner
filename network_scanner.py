@@ -7,4 +7,4 @@ def scan(ip):
     scapy.arping(ip)
 
 #scan modem ip
-scan("192.168.1.1")
+scan("192.168.1.1/24")
