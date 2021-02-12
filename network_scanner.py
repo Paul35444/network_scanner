@@ -2,3 +2,7 @@
 
 import scapy.all as scapy
 
+#func to scan ip
+def scan(ip):
+    scapy.arping(ip)
+
