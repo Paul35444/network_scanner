@@ -11,5 +11,8 @@ def scan(ip):
     #combine both
     arp_request_broadcast = broadcast/arp_request
 
+    #.srp sends packets with cust Ether
+    scapy.srp(arp_request_broadcast)
+
 #scan modem ip
 scan("192.168.1.1/24")
