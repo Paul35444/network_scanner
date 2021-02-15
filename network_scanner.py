@@ -14,7 +14,7 @@ def scan(ip):
     #.srp sends packets with cust Ether
     answered_list, unanswered_list = scapy.srp(arp_request_broadcast, timeout=1)
 
-    print(answered.summary())
+    print(answered_list.summary())
 
 #scan modem ip
 scan("192.168.1.1/24")
