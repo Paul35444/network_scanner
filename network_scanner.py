@@ -12,7 +12,7 @@ def scan(ip):
     arp_request_broadcast = broadcast/arp_request
 
     #.srp sends packets with cust Ether
-    answered, unanswered = scapy.srp(arp_request_broadcast)
+    answered, unanswered = scapy.srp(arp_request_broadcast, timeout=1)
 
 #scan modem ip
 scan("192.168.1.1/24")
