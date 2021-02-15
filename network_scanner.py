@@ -4,8 +4,12 @@ import scapy.all as scapy
 
 #func to scan ip
 def scan(ip):
+    #store IP in arp_request
     arp_request = scapy.ARP(pdst=ip)
-    print(arp_request.summary())
+    #store Ether in broadcast
+    broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+    #combine both
+    arp_request_broadcast = broadcast/arp_request
 
 #scan modem ip
 scan("192.168.1.1/24")
