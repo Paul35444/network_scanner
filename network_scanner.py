@@ -17,6 +17,7 @@ def scan(ip):
         client_dict = {"ip": element[1].psrc, "mac": element[1].hwsrc} 
         clients_list.append(client_dict)
         print(element[1].psrc + "\t\t" + element[1].hwsrc)  #psrc: source IP; hwsrc: source MAC Address
+    print(clients_list)
 
 #scan modem ip
 scan("192.168.1.1/24")
