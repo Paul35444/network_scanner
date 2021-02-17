@@ -17,6 +17,7 @@ def scan(ip):
 
     for element in answered_list:
         print(element)
+        print("--------------------------------------------------------------------------------------------------------")
 
 #scan modem ip
 scan("192.168.1.1/24")
