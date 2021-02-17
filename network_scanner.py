@@ -16,7 +16,8 @@ def scan(ip):
     answered_list = scapy.srp(arp_request_broadcast, timeout=1)[0]
 
     for element in answered_list:
-        print(element)
+        print(element[1].psrc)  #psrc: source IP who sent packet
+        print(element[1].hwsrc) #hwsrc: MAC add of client who sent packet
         print("--------------------------------------------------------------------------------------------------------")
 
 #scan modem ip
