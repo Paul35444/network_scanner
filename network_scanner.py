@@ -2,14 +2,10 @@
 
 import scapy.all as scapy
 
-#func to scan ip
 def scan(ip):
-    #store IP in arp_request
-    arp_request = scapy.ARP(pdst=ip)
-    #store Ether in broadcast
-    broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
-    #combine both
-    arp_request_broadcast = broadcast/arp_request
+    arp_request = scapy.ARP(pdst=ip) #store IP in arp_request
+    broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff") #store Ether in broadcast
+    arp_request_broadcast = broadcast/arp_request #combine both
 
     #.srp (send and recv) sends packets with cust Ether
     #[0] to only give us the first list which is answered packets
