@@ -12,7 +12,8 @@ def scan(ip):
     arp_request_broadcast = broadcast/arp_request
 
     #.srp (send and recv) sends packets with cust Ether
-    answered_list = scapy.srp(arp_request_broadcast, timeout=1)
+    #[0] to only give us the first list which is answered packets
+    answered_list = scapy.srp(arp_request_broadcast, timeout=1)[0]
 
     print(answered_list.summary())
 
