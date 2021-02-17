@@ -11,10 +11,9 @@ def scan(ip):
     #[0] to only give us the first list which is answered packets
     answered_list = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0] #verbose=False hides everything but results
 
+    print("IP\t\t\tMAC Address\n---------------------------------------------------------------------------------------") 
     for element in answered_list:
-        print(element[1].psrc)  #psrc: source IP who sent packet
-        print(element[1].hwsrc) #hwsrc: MAC add of client who sent packet
-        print("--------------------------------------------------------------------------------------------------------")
+        print(element[1].psrc + "\t\t" + element[1].hwsrc)  #psrc: source IP who sent packet; hwsrc: MAC Address from source who sent packet
 
 #scan modem ip
 scan("192.168.1.1/24")
