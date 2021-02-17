@@ -11,8 +11,8 @@ def scan(ip):
     #combine both
     arp_request_broadcast = broadcast/arp_request
 
-    #.srp sends packets with cust Ether
-    answered_list, unanswered_list = scapy.srp(arp_request_broadcast, timeout=1)
+    #.srp (send and recv) sends packets with cust Ether
+    answered_list = scapy.srp(arp_request_broadcast, timeout=1)
 
     print(answered_list.summary())
 
