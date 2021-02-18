@@ -3,7 +3,10 @@
 import scapy.all as scapy
 
 def get_arguments():
-
+    parser = optparse.OptionParser()
+    parser.add_option("-t", "--target", dest="target", help="Target IP/IP range.")
+    (options, arguments) = parser.parse_args()
+    return options
 
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)                    #store IP in arp_request
