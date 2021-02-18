@@ -29,6 +29,6 @@ def print_results(results_list):
         print(client["ip"] + "\t\t" + client["mac"])
 
 
-#scan modem ip
-scan_result = scan("192.168.1.1/24")
+options = get_arguments()
+scan_result = scan(options.target)
 print_results(scan_result)
