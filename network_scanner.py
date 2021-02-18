@@ -24,4 +24,5 @@ def print_results(results_list):
 
 
 #scan modem ip
-scan("192.168.1.1/24")
+scan_result = scan("192.168.1.1/24")
+print_results(scan_result)
