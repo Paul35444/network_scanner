@@ -2,6 +2,9 @@
 
 import scapy.all as scapy
 
+def get_arguments():
+
+
 def scan(ip):
     arp_request = scapy.ARP(pdst=ip)                    #store IP in arp_request
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")    #store Ether in broadcast
